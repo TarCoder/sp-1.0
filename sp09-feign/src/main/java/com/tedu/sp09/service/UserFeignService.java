@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tedu.sp01.pojo.User;
+import com.tedu.sp09.service.fb.OrderFeignServiceFB;
 import com.tedu.web.util.JsonResult;
 
-@FeignClient("user-service")
+@FeignClient(name="order-service",fallback = OrderFeignServiceFB.class)
 public interface UserFeignService {
 	@GetMapping("/{userId}")
 	JsonResult<User> getUser(@PathVariable Integer userId);

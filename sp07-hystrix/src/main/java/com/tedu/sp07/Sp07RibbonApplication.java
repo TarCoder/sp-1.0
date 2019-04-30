@@ -30,7 +30,7 @@ public class Sp07RibbonApplication {
 		 */
 		SimpleClientHttpRequestFactory f = new SimpleClientHttpRequestFactory();
 		f.setConnectTimeout(1000);
-		f.setReadTimeout(1000);
+		f.setReadTimeout(1000);//等待请求数据的时间,超时后进行重试
 		return new RestTemplate(f);
 	}
 }

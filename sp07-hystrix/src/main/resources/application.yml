@@ -15,3 +15,35 @@ ribbon:
   MaxAutoRetries: 1
   OkToRetryOnAllOperations: true
   
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 500  ##请求等待超时时间,超时后进行降级
+
+##暴露hystrix监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream ##  "*"->表示暴露所有监控端点;
+                                ##  hystrix.stream->表示暴露hystrix监控端点
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.tedu.sp01.pojo.Item;
+import com.tedu.sp09.service.fb.ItemFeignServiceFB;
 import com.tedu.web.util.JsonResult;
 
-@FeignClient("item-service")
+@FeignClient(name="item-service", fallback = ItemFeignServiceFB.class)
 public interface ItemFeignService {
 	@GetMapping("/{orderId}")
 	JsonResult<List<Item>> getItems(@PathVariable String orderId);
