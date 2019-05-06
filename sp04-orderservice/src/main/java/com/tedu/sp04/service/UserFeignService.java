@@ -1,4 +1,4 @@
-package com.tedu.sp09.service;
+package com.tedu.sp04.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tedu.sp01.pojo.User;
-import com.tedu.sp09.service.fb.UserFeignServiceFB;
+import com.tedu.sp04.service.fb.UserFeignServiceFB;
 import com.tedu.web.util.JsonResult;
 
-@FeignClient(name="user-service",fallback = UserFeignServiceFB.class)
+@FeignClient(name="user-service", fallback = UserFeignServiceFB.class)
 public interface UserFeignService {
 	@GetMapping("/{userId}")
 	JsonResult<User> getUser(@PathVariable Integer userId);
