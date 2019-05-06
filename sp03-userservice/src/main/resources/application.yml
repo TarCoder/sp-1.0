@@ -10,6 +10,9 @@ server:
   port: 8101
 
 eureka:
+  instance:
+#    instance-id: 吴限,你好!
+    prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      defaultZone: http://176.212.33.50:2001/eureka, http://176.212.33.50:2002/eureka
