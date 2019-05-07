@@ -1,13 +1,21 @@
 spring:
+  profiles:    active:
+    - native  rabbitmq:
+    host: 176.212.33.30
+    port: 5672
+    username: admin
+    password: admin
+  
   application:
     name: config-server
   
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/TarCoder/sp-config
-          searchPaths: config
+#        git:
+#          uri: https://github.com/TarCoder/sp-config
+#          searchPaths: config        native:          search-locations: 
+          - classpath:/config
           #username: your-username
           #password: your-password
     
@@ -18,3 +26,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

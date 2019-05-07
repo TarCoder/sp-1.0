@@ -1,0 +1,32 @@
+sp:
+  user-service:
+    users: "[{\"id\":7, \"username\":\"ddd\",\"password\":\"123\"},{\"id\":8, \"username\":\"def\",\"password\":\"456\"},{\"id\":9, \"username\":\"ghi\",\"password\":\"789\"}]"
+
+spring:
+  sleuth:
+    sampler:
+      probability: 1
+  rabbitmq:
+    host: 176.212.33.30
+    port: 5672
+    username: admin
+    password: admin
+  application:
+    name: user-service
+    
+server:
+  port: 8101
+
+eureka:
+  instance:
+#    instance-id: 吴限,你好!
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://176.212.33.50:2001/eureka, http://176.212.33.50:2002/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

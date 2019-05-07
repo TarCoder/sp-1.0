@@ -9,7 +9,7 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-      name: item-service
+      name: user-service
       profile: dev
       
 eureka:

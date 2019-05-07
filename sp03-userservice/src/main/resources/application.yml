@@ -1,18 +1,17 @@
-sp:
-  user-service:
-    users: "[{\"id\":7, \"username\":\"abc\",\"password\":\"123\"},{\"id\":8, \"username\":\"def\",\"password\":\"456\"},{\"id\":9, \"username\":\"ghi\",\"password\":\"789\"}]"
-
-spring:
-  application:
-    name: user-service
-    
-server:
-  port: 8101
-
-eureka:
-  instance:
-#    instance-id: 吴限,你好!
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://176.212.33.50:2001/eureka, http://176.212.33.50:2002/eureka
+#sp:
+#  user-service:
+#    users: "[{\"id\":7, \"username\":\"aaa\",\"password\":\"123\"},{\"id\":8, \"username\":\"def\",\"password\":\"456\"},{\"id\":9, \"username\":\"ghi\",\"password\":\"789\"}]"
+#
+#spring:
+#  application:
+#    name: user-service
+#    
+#server:
+#  port: 8101
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    service-url:
+#      defaultZone: http://176.212.33.50:2001/eureka, http://176.212.33.50:2002/eureka
